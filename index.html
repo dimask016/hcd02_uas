@@ -350,14 +350,10 @@
         <table class="tabel-analisis">
             <thead><tr><th>Pain Point dalam Thalos</th><th>Dampak pada Teknisi &amp; Operasional</th></tr></thead>
             <tbody>
-                <tr><td>❌ Thalos tidak menampilkan stok part di halaman work order utama</th><td>Teknisi harus membuka menu terpisah (inventory), memakan waktu 7-9 klik</th>
-                </tr>
-                <tr><td>❌ Thalos tidak menyediakan peta visual pharmacy</th><td>Teknisi harus mencari manual atau bertanya admin, rata-rata 15-20 menit tambahan</th>
-                </tr>
-                <tr><td>❌ Informasi lokasi part hanya berupa teks (misal "Rak 3 Bin 12") tidak cukup intuitif</th><td>Teknisi masih bingung orientasi di pharmacy, apalagi jika layout berubah</th>
-                </tr>
-                <tr><td>❌ Tidak ada mode darurat (emergency mode) di Thalos</th><td>Sistem tidak membedakan request urgent dengan request rutin, semua diproses sama lambatnya</th>
-                </tr>
+                <tr><td>❌ Thalos tidak menampilkan stok part di halaman work order utama</td><td>Teknisi harus membuka menu terpisah (inventory), memakan waktu 7-9 klik</td></tr>
+                <tr><td>❌ Thalos tidak menyediakan peta visual pharmacy</td><td>Teknisi harus mencari manual atau bertanya admin, rata-rata 15-20 menit tambahan</td></tr>
+                <tr><td>❌ Informasi lokasi part hanya berupa teks (misal "Rak 3 Bin 12") tidak cukup intuitif</td><td>Teknisi masih bingung orientasi di pharmacy, apalagi jika layout berubah</td></tr>
+                <tr><td>❌ Tidak ada mode darurat (emergency mode) di Thalos</td><td>Sistem tidak membedakan request urgent dengan request rutin, semua diproses sama lambatnya</td></tr>
             </tbody>
         </table>
 
@@ -367,7 +363,6 @@
             <li>Memberikan informasi <strong>stok part (tersedia/habis)</strong> secara instan, langsung di halaman work order.</li>
             <li>Memberikan informasi <strong>lokasi fisik part di pharmacy</strong> dalam bentuk peta visual yang mudah dipahami.</li>
             <li>Mengurangi waktu yang dibutuhkan teknisi untuk mengetahui stok dan lokasi part dari rata-rata 73 detik menjadi <strong>kurang dari 10 detik</strong>.</li>
-            <li>Menyediakan <strong>Emergency Mode</strong> untuk situasi downtime darurat, sehingga teknisi bisa fokus pada perbaikan tanpa gangguan fitur lain.</li>
         </ul>
     </div>
 
@@ -392,42 +387,35 @@
         <p>Observasi langsung (shadowing) 3 teknisi saat menggunakan Thalos dan mencari part di pharmacy, wawancara semi-terstruktur dengan 6 teknisi, serta analisis log pencarian part dari sistem Thalos (200 transaksi).</p>
         
         <div class="sub-bab">3.2 Profil Responden</div>
-        <table class="tabel-analisis">
+         <table class="tabel-analisis">
             <thead><tr><th>Inisial</th><th>Pengalaman (thn)</th><th>Frekuensi ganti part/hari</th><th>Skill komputer</th></tr></thead>
             <tbody>
-                <tr><td>T1 (Andi)</th><td>5</th><td>5-7 kali</th><td>Sedang</th>
+                <tr><td>T1 (Fahmi)</th><td>6</th><td>5-7 kali</th><td>Tinggi</th>
                 </tr>
-                <tr><td>T2 (Budi)</th><td>8</th><td>3-5 kali</th><td>Dasar</th>
+                <tr><td>T2 (Didit)</th><td>4,5</th><td>8-10 kali</th><td>Tinggi</th>
                 </tr>
-                <tr><td>T3 (Citra)</th><td>2</th><td>6-8 kali</th><td>Tinggi</th>
+                <tr><td>T3 (Alex)</th><td>3</th><td>10-12 kali</th><td>Sedang</th>
                 </tr>
-                <tr><td>T4 (Dedi)</th><td>10</th><td>2-4 kali</th><td>Dasar</th>
+                <tr><td>T4 (Nisa)</th><td>2,5</th><td>12-15 kali</th><td>Sedang</th>
                 </tr>
-                <tr><td>T5 (Eka)</th><td>4</th><td>4-6 kali</th><td>Sedang</th>
+                <tr><td>T5 (Dimas)</th><td>1</th><td>15-17 kali</th><td>Sedang</th>
                 </tr>
-                <tr><td>T6 (Fajar)</th><td>7</th><td>5-7 kali</th><td>Tinggi</th>
+                <tr><td>T6 (Prima)</th><td>1</th><td>15-17 kali</th><td>Sedang</th>
                 </tr>
             </tbody>
         </table>
 
         <div class="sub-bab">3.3 User Journey Map (Emoticon Perasaan)</div>
         <table class="tabel-analisis journey-table">
-            <thead><tr><th>Tahap</th><th>Aksi Teknisi di Thalos</th><th>Pikiran</th><th>Perasaan</th><th>Pain Point</th></tr></thead>
+            <thead><td><th>Tahap</th><th>Aksi Teknisi di Thalos</th><th>Pikiran</th><th>Perasaan</th><th>Pain Point</th></tr></thead>
             <tbody>
-                <tr><td class="journey-emoji">1</td><td>Notifikasi work order di Thalos</td><td>"Server down, cepat ganti part"</td><td class="journey-emoji">😰 Cemas</td><td>Work order tidak mencantumkan part spesifik</td>
-                </tr>
-                <tr><td class="journey-emoji">2</td><td>Cek log server, tentukan part number</td><td>"GPU ini part number A123?"</td><td class="journey-emoji">😕 Bingung</td><td>Perlu hafal atau cari part number manual</td>
-                </tr>
-                <tr><td class="journey-emoji">3</td><td>Buka menu Inventory, search part</td><td>"Semoga stok ada... di rak mana?"</td><td class="journey-emoji">😟 Khawatir</td><td>Thalos tidak langsung menampilkan stok & lokasi di work order</td>
-                </tr>
-                <tr><td class="journey-emoji">4</td><td>Mencari part berdasarkan teks koordinat</td><td>"Rak C3-Bin5 itu di mana?"</td><td class="journey-emoji">😠 Frustrasi</td><td>Label rak tidak update, tidak ada peta visual</td>
-                </tr>
-                <tr><td class="journey-emoji">5</td><td>Ambil, verifikasi nomor part</td><td>"Ini part yang benar?"</td><td class="journey-emoji">😰 Was-was</td><td>Part mirip (BIOS vs GPU)</td>
-                </tr>
-                <tr><td class="journey-emoji">6</td><td>Ganti part, test fungsi server</td><td>"Semoga langsung normal"</td><td class="journey-emoji">😮‍💨 Lega tipis</td><td>Tanpa panduan langkah demi langkah</td>
-                </tr>
-                <tr><td class="journey-emoji">7</td><td>Catat part yang diambil, tutup work order</td><td>"Harus buka form lagi..."</td><td class="journey-emoji">😞 Lelah</td><td>Banyak field yang harus diisi</td>
-                </tr>
+                <tr><td class="journey-emoji">1</td><td>Notifikasi work order di Thalos</td><td>"Server down, cepat ganti part"</td><td class="journey-emoji">😰 Cemas</td><td>Work order tidak mencantumkan part spesifik</td></tr>
+                <tr><td class="journey-emoji">2</td><td>Cek log server, tentukan part number</td><td>"GPU ini part number A123?"</td><td class="journey-emoji">😕 Bingung</td><td>Perlu hafal atau cari part number manual</td></tr>
+                <tr><td class="journey-emoji">3</td><td>Buka menu Inventory, search part</td><td>"Semoga stok ada... di rak mana?"</td><td class="journey-emoji">😟 Khawatir</td><td>Thalos tidak langsung menampilkan stok & lokasi di work order</td></tr>
+                <tr><td class="journey-emoji">4</td><td>Mencari part berdasarkan teks koordinat</td><td>"Rak C3-Bin5 itu di mana?"</td><td class="journey-emoji">😠 Frustrasi</td><td>Label rak tidak update, tidak ada peta visual</td></tr>
+                <tr><td class="journey-emoji">5</td><td>Ambil, verifikasi nomor part</td><td>"Ini part yang benar?"</td><td class="journey-emoji">😰 Was-was</td><td>Part mirip (BIOS vs GPU)</td></tr>
+                <tr><td class="journey-emoji">6</td><td>Ganti part, test fungsi server</td><td>"Semoga langsung normal"</td><td class="journey-emoji">😮‍💨 Lega tipis</td><td>Tanpa panduan langkah demi langkah</td></tr>
+                <tr><td class="journey-emoji">7</td><td>Catat part yang diambil, tutup work order</td><td>"Harus buka form lagi..."</td><td class="journey-emoji">😞 Lelah</td><td>Banyak field yang harus diisi</td></tr>
             </tbody>
         </table>
 
@@ -435,26 +423,16 @@
         <table class="tabel-analisis">
             <thead><tr><th>No</th><th>Pertanyaan</th><th>Hasil Ringkasan</th></tr></thead>
             <tbody>
-                <tr><td>1</td><td>Seberapa sering Anda tidak tahu stok part sebelum ke pharmacy?</td><td>100% menjawab "sering" (3-5 kali per minggu)</td>
-                </tr>
-                <tr><td>2</td><td>Rata-rata waktu tambahan karena harus mencari lokasi part di pharmacy?</td><td>19,7 menit</td>
-                </tr>
-                <tr><td>3</td><td>Apa yang Anda lakukan saat Thalos tidak memberi info lokasi part?</td><td>Tanya admin gudang (83%) atau cari manual (67%)</td>
-                </tr>
-                <tr><td>4</td><td>Seberapa akurat Thalos dalam menunjukkan stok & lokasi part?</td><td>83% memberi skor ≤2 (tidak akurat atau lambat)</td>
-                </tr>
-                <tr><td>5</td><td>Cerita frustrasi paling mengesalkan terkait Thalos?</td><td>"Saya ke pharmacy, cari 20 menit, ternyata part habis karena stok di Thalos tidak update"</td>
-                </tr>
-                <tr><td>6</td><td>Informasi apa yang paling penting sebelum ke pharmacy?</td><td>Stok (100%), lokasi rak/bin (100%)</td>
-                </tr>
-                <tr><td>7</td><td>Fitur GPN Finder yang memberi info instan akan sangat membantu?</td><td>Rata-rata skor 4,7 dari 5</td>
-                </tr>
-                <tr><td>8</td><td>Fitur apa yang mengganggu di Thalos saat ini?</td><td>Navigasi berlapis, tidak ada pencarian cepat part di work order</td>
-                </tr>
-                <tr><td>9</td><td>Target waktu maksimal untuk tahu stok & lokasi part?</td><td>67% &lt;10 detik, sisanya 10-30 detik</td>
-                </tr>
-                <tr><td>10</td><td>Apakah peta visual pharmacy akan membantu mempercepat pekerjaan?</td><td>100% YA</td>
-                </tr>
+                <tr><td>1</td><td>Seberapa sering Anda tidak tahu stok part sebelum ke pharmacy?</td><td>100% menjawab "sering" (3-5 kali per minggu)</td></tr>
+                <tr><td>2</td><td>Rata-rata waktu tambahan karena harus mencari lokasi part di pharmacy?</td><td>19,7 menit</td></tr>
+                <tr><td>3</td><td>Apa yang Anda lakukan saat Thalos tidak memberi info lokasi part?</td><td>Tanya admin gudang (83%) atau cari manual (67%)</td></tr>
+                <tr><td>4</td><td>Seberapa akurat Thalos dalam menunjukkan stok & lokasi part?</td><td>83% memberi skor ≤2 (tidak akurat atau lambat)</td></tr>
+                <tr><td>5</td><td>Cerita frustrasi paling mengesalkan terkait Thalos?</td><td>"Saya ke pharmacy, cari 20 menit, ternyata part habis karena stok di Thalos tidak update"</td></tr>
+                <tr><td>6</td><td>Informasi apa yang paling penting sebelum ke pharmacy?</td><td>Stok (100%), lokasi rak/bin (100%)</td></tr>
+                <tr><td>7</td><td>Fitur GPN Finder yang memberi info instan akan sangat membantu?</td><td>Rata-rata skor 4,7 dari 5</td></tr>
+                <tr><td>8</td><td>Fitur apa yang mengganggu di Thalos saat ini?</td><td>Navigasi berlapis, tidak ada pencarian cepat part di work order</td></tr>
+                <tr><td>9</td><td>Target waktu maksimal untuk tahu stok & lokasi part?</td><td>67% &lt;10 detik, sisanya 10-30 detik</td></tr>
+                <tr><td>10</td><td>Apakah peta visual pharmacy akan membantu mempercepat pekerjaan?</td><td>100% YA</td></tr>
             </tbody>
         </table>
         <div class="insight-box">
@@ -471,17 +449,16 @@
         <table class="tabel-analisis">
             <thead><tr><th>Heuristik</th><th>Skor</th><th>Pelanggaran terkait ketidaktahuan stok/lokasi</th></tr></thead>
             <tbody>
-                </tr><td>1. Visibilitas status</td><td>2</td><td>Tidak ada indikator stok di halaman work order Thalos</td>
-                <tr><td>2. Match real world</td><td>3</td><td>Istilah "Inventory" tidak familiar untuk teknisi lapangan</td>
-                <tr><td>3. User control</td><td>2</td><td>Tidak bisa langsung melihat stok tanpa keluar dari work order</td>
-                <tr><td>4. Konsistensi</td><td>2</td><td>Label menu berbeda-beda antar modul Thalos</td>
-                <tr><td>5. Error prevention</td><td>3</td><td>Validasi minim, bisa request part tanpa cek stok</td>
-                <tr><td>6. Recognition vs recall</td><td>1</td><td>Teknisi harus hafal part number dan lokasi rak (sangat buruk)</td>
-                <tr><td>7. Fleksibilitas</td><td>3</td><td>Tidak ada shortcut untuk cek stok cepat</td>
-                <tr><td>8. Minimalis</td><td>1</td><td>Informasi stok dan lokasi terkubur di menu dalam yang panjang</td>
-                <tr><td>9. Help errors</td><td>2</td><td>Pesan error tidak membantu (contoh: "Part not found")</td>
-                <tr><td>10. Dokumentasi</td><td>2</td><td>Tidak ada panduan pencarian part di Thalos</td>
-                </tr>
+                <tr><td>1. Visibilitas status</td><td>2</td><td>Tidak ada indikator stok di halaman work order Thalos</td></tr>
+                <tr><td>2. Match real world</td><td>3</td><td>Istilah "Inventory" tidak familiar untuk teknisi lapangan</td></tr>
+                <tr><td>3. User control</td><td>2</td><td>Tidak bisa langsung melihat stok tanpa keluar dari work order</td></tr>
+                <tr><td>4. Konsistensi</td><td>2</td><td>Label menu berbeda-beda antar modul Thalos</td></tr>
+                <tr><td>5. Error prevention</td><td>3</td><td>Validasi minim, bisa request part tanpa cek stok</td></tr>
+                <tr><td>6. Recognition vs recall</td><td>1</td><td>Teknisi harus hafal part number dan lokasi rak (sangat buruk)</td></tr>
+                <tr><td>7. Fleksibilitas</td><td>3</td><td>Tidak ada shortcut untuk cek stok cepat</td></tr>
+                <tr><td>8. Minimalis</td><td>1</td><td>Informasi stok dan lokasi terkubur di menu dalam yang panjang</td></tr>
+                <tr><td>9. Help errors</td><td>2</td><td>Pesan error tidak membantu (contoh: "Part not found")</td></tr>
+                <tr><td>10. Dokumentasi</td><td>2</td><td>Tidak ada panduan pencarian part di Thalos</td></tr>
             </tbody>
         </table>
 
@@ -505,7 +482,6 @@
         <h2>BAB 5 – SOLUSI DESAIN</h2>
        <div class="sub-bab">5.1 Konsep GPN Finder (Google Part Number Finder) untuk Thalos</div>
         
-        <!-- SCREENSHOT APLIKASI - Ditempatkan di sub-bab 5.1 karena menunjukkan tampilan daftar part dengan kolom GPN, Location, Description yang relevan -->
         <div class="screenshot-area">
             <img src="pickup-part.png" alt="Screenshot tampilan daftar part pada sistem Thalos - Menampilkan kolom Quantity, GPN, Location, Description, Part Numbers">
             <div class="screenshot-caption">
@@ -523,31 +499,16 @@
             <li><strong>Integrasi dengan work order:</strong> GPN Finder muncul sebagai card kecil ketika teknisi hover atau mengetik part number di field work order.</li>
         </ul>
         
-        <!-- CARD EMERGENCY MODE -->
         <div style="text-align: center; margin: 1rem 0 0.5rem 0;">
-            <h3 style="color: #d98c2b; font-weight: bold;">🚨 Tampilan GPN Finder di Thalos (Emergency Mode)</h3>
+            <h3 style="color: #d98c2b; font-weight: bold;">🚨 Tampilan GPN Finder di Thalos</h3>
         </div>
         <div class="emergency-card">
-            <strong>🚨 TAMPILAN GPN FINDER DI THALOS (Emergency Mode - Terintegrasi)</strong><br>
-            ┌─────────────────────────────────────────────────────────────┐<br>
-            │ 🚨 EMERGENCY MODE - DOWNTIME ACTIVE                   [EXIT]<br>
-            │ Work Order: #WO-2401 | Server: Storage-Node-03              │<br>
-            │ 🔍 SCAN / KETIK PART NUMBER: [1152230-03]            [CARI] │<br>
-            │ ⚙️ CSSD-Saola | 128GB Raw | Kioxia BICS5 - STATUS:         │<br>
-            │ 🟢 STOK: TERSEDIA (1 pcs)  ✅ SIAP AMBIL                    │<br>
-            │ 📍 LOKASI: PHARMACY - P201C01 (Rak 3 - Bin 12)              │<br>
-            │ ┌─────────────────────────────────────────────────┐        │<br>
-            │ │           PETA PHARMACY (Cluster fi)            │        │<br>
-            │ │ [P201C01⭐] [P201C02] [P201C03] [P201C04]        │        │<br>
-            │ │ [P201C05]  [P201C06]  [P201C07] [P201C08]        │        │<br>
-            │ │ ⭐ = LOKASI PART (P201C01)                       │        │<br>
-            │ └─────────────────────────────────────────────────┘        │<br>
-            │ [✓ AMBIL PART SEKARANG] (1 klik, update otomatis ke Thalos) │<br>
-            │ ⏱️ Downtime saat ini: 00:12:34                              │<br>
-            └─────────────────────────────────────────────────────────────┘
+            <img src="8oNKFnj3pkFjgwb.png" alt="Screenshot GPN Finder Emergency Mode - Retrieve Parts" style="max-width:100%; border-radius: 12px;">
+            <div class="screenshot-caption" style="margin-top: 0.75rem;">
+                <i class="fas fa-image"></i> Gambar 5.2 – Tampilan fitur GPN Finder dalam Emergency Mode pada sistem Thalos. Teknisi dapat langsung melihat daftar part yang diperlukan (GPN, MPN, quantity), status ketersediaan (Ready), dan informasi lokasi part di pharmacy berdasarkan data dari tabel "Retrieve Parts".
+            </div>
         </div>
 
-        <!-- DUA GAMBAR BARU di bawah tulisan Emergency Mode -->
         <div class="emergency-gallery">
             <div class="screenshot-area">
                 <img src="BFNGDtKqdUNGBu7.png" alt="Tampilan Select Default Cluster pada GPN Pharmacy Finder - Emergency Mode context">
@@ -583,90 +544,25 @@
         
         <div class="prototype-card">
             <div class="prototype-title">
-                <i class="fas fa-pencil-ruler"></i> Varian A: Sidebar Kiri
+                <i class="fas fa-pencil-ruler"></i> Low Fidelity 1
             </div>
-            <div class="ascii-art">
-┌─────────────────────────────────────────────────────────────────────────┐
-│  THALOS - WORK ORDER #WO-2401                                [≡] [✕]  │
-├───────────────┬─────────────────────────────────────────────────────────┤
-│ 📋 WORK ORDER │  Server: Storage-Node-03                                │
-│ 📊 INVENTORY  │  Issue: HDD Failure - CSSD not detected                 │
-│ 🔧 REPAIR     │  ─────────────────────────────────────────────────────  │
-│ 📦 GPN FINDER │  Part Number : [1152230-03]                    [CARI]   │
-│ ⚙️ SETTINGS   │                                                          │
-│               │  Result:                                                 │
-│               │  ┌──────────────────────────────────────────────────┐   │
-│               │  │ 🔍 GPN: 1152230-03                                │   │
-│               │  │ 📝 CSSD-Saola 128GB Raw                           │   │
-│               │  │ 🟢 Stock: 1 pcs (Tersedia)                        │   │
-│               │  │ 📍 Location: P201C01 (Rak 3 Bin 12)               │   │
-│               │  │ [✓ AMBIL PART]                                    │   │
-│               │  └──────────────────────────────────────────────────┘   │
-│               │                                                          │
-│               │  [SAVE] [CANCEL]                                         │
-└───────────────┴─────────────────────────────────────────────────────────┘
+            <div class="emergency-card">
+                <img src="low-fidelity-cluster.png" alt="Low fidelity cluster" style="max-width:100%; border-radius: 12px;">
+                <div class="screenshot-caption" style="margin-top: 0.75rem;">
+                    <i class="fas fa-image"></i> Gambar 6.1 – Sketsa low-fidelity yang menunjukkan konsep pemilihan cluster default.
+                </div>
             </div>
-            <p><strong>Kelebihan:</strong> Informasi selalu terlihat tanpa harus membuka pop-up. <strong>Kekurangan:</strong> Memakan space horizontal yang cukup besar, monitor teknisi yang kecil (< 1366x768) menjadi terasa sempit. <strong>Feedback teknisi:</strong> "Terlalu banyak area tertutup, work order jadi kepotong." (T2)</p>
         </div>
 
         <div class="prototype-card">
             <div class="prototype-title">
-                <i class="fas fa-pencil-ruler"></i> Varian B: Toolbar Atas (Dropdown)
+                <i class="fas fa-pencil-ruler"></i> Low Fidelity 2
             </div>
-            <div class="ascii-art">
-┌─────────────────────────────────────────────────────────────────────────┐
-│  THALOS - WORK ORDER #WO-2401                       [GPN▼] [≡] [✕]      │
-├─────────────────────────────────────────────────────────────────────────┤
-│  Work Order ID: WO-2401          Status: IN PROGRESS 🟡                 │
-│  Server: Storage-Node-03          Priority: HIGH 🔴                     │
-│  ─────────────────────────────────────────────────────────────────────  │
-│  Issue: HDD Failure - CSSD not detected                                 │
-│                                                                          │
-│  Part Number: [1152230-03]                                              │
-│                                                                          │
-│  [SAVE] [CANCEL]                                                         │
-└─────────────────────────────────────────────────────────────────────────┘
-
-       ▼ KLIK DROPDOWN GPN ▼
-┌─────────────────────────────────────────────────────────────────────────┐
-│  🔍 Search GPN: [_______]                                               │
-│  ─────────────────────────────────────────────────────────────────────  │
-│  ✓ 1152230-03 | CSSD-Saola | P201C01 | Stock: 1                        │
-│    1150306-03 | CSSD-Saola | P201C06 | Stock: 2                         │
-│    1184689-01 | CSSD-Saola | P301B02 | Stock: 0 🔴                      │
-└─────────────────────────────────────────────────────────────────────────┘
-            </div>
-            <p><strong>Kelebihan:</strong> Tidak memakan space permanen. <strong>Kekurangan:</strong> Teknisi harus melakukan klik ekstra untuk melihat hasil. <strong>Feedback teknisi:</strong> "Kalau lagi butuh cepat, ribet harus klik dropdown dulu." (T3)</p>
-        </div>
-
-        <div class="prototype-card">
-            <div class="prototype-title">
-                <i class="fas fa-pencil-ruler"></i> Varian C: Overlay Hover (Terpilih)
-            </div>
-            <div class="ascii-art">
-┌─────────────────────────────────────────────────────────────────────────┐
-│  THALOS - WORK ORDER #WO-2401                                [≡] [✕]  │
-├─────────────────────────────────────────────────────────────────────────┤
-│  Work Order ID: WO-2401          Status: IN PROGRESS 🟡                 │
-│  Server: Storage-Node-03          Priority: HIGH 🔴                     │
-│  ─────────────────────────────────────────────────────────────────────  │
-│  Issue: HDD Failure - CSSD not detected                                 │
-│                                                                          │
-│  Part Number: [1152230-03] ← mouse hover disini                         │
-│                                                                          │
-│  ┌────────────────────────────────────────┐  (muncul otomatis)          │
-│  │ 🔍 GPN: 1152230-03                      │                            │
-│  │ 🟢 Tersedia (1 pcs)                     │                            │
-│  │ 📍 P201C01 (Rak 3 - Bin 12)             │                            │
-│  │ [✓ Ambil Part]                          │                            │
-│  └────────────────────────────────────────┘                            │
-│                                                                          │
-│  [SAVE] [CANCEL]                                                         │
-└─────────────────────────────────────────────────────────────────────────┘
-            </div>
-            <p><strong>Kelebihan:</strong> Informasi muncul tanpa klik, tidak memakan space permanen, intuitif. <strong>Kekurangan:</strong> Perlu pengaturan hover delay yang tepat. <strong>Feedback teknisi:</strong> "Ini paling enak, langsung keliatan tanpa buka menu tambahan." (T4, T5, T6)</p>
-            <div class="quote-box" style="margin-top: 1rem;">
-                <i class="fas fa-check-circle" style="color: green;"></i> <strong>Keputusan:</strong> Varian C (Overlay Hover) dipilih sebagai basis pengembangan High-Fidelity Prototype.
+            <div class="emergency-card">
+                <img src="low-fidelity.png" alt="Low fidelity wireframe" style="max-width:100%; border-radius: 12px;">
+                <div class="screenshot-caption" style="margin-top: 0.75rem;">
+                    <i class="fas fa-image"></i> Gambar 6.2 – Sketsa alternatif layout GPN Finder pada work order.
+                </div>
             </div>
         </div>
 
@@ -683,7 +579,7 @@
                 <tbody>
                     <tr><td>Warna Stok Tersedia</td><td style="background:#2E7D32; color:white; font-weight:bold;"> Hijau #2E7D32</td><td>Memenuhi heuristik #1 (visibility), warna hijau universal untuk 'aman/tersedia'</td></tr>
                     <tr><td>Warna Stok Habis</td><td style="background:#D32F2F; color:white; font-weight:bold;"> Merah #D32F2F</td><td>Memberikan peringatan visual langsung, mencegah teknisi ke pharmacy sia-sia</td></tr>
-                    <tr><td>Tombol Emergency Mode</td><td>Merah terang #FF3B30, ikon ⚡, ukuran 48x48px, pojok kanan bawah</td><td>Mudah ditemukan dalam situasi panik (heuristik #3 user control)</td></tr>
+                   
                     <tr><td>Card GPN Finder</td><td>Background putih, border-radius 16px, shadow soft, font Roboto 12-14px</td><td>Modern, mudah dibaca, tidak mengganggu konten utama</td></tr>
                     <tr><td>Interaksi Hover</td><td>Delay 500ms, hanya aktif jika mouse diam</td><td>Menghindari false trigger (hasil iterasi dari testing)</td></tr>
                     <tr><td>Peta Pharmacy</td><td>Grid 2x4 dengan kode rak P201C01-P201C08, highlight biru #1976D2</td><td>Visualisasi lokasi yang lebih baik daripada teks koordinat</td></tr>
@@ -695,87 +591,29 @@
             <div class="prototype-title">
                 <i class="fas fa-desktop"></i> Mockup Halaman Work Order dengan GPN Finder (Mode Normal)
             </div>
-            <div class="ascii-art">
-┌─────────────────────────────────────────────────────────────────────────────────┐
-│  THALOS - SERVICE MANAGEMENT                                      [⚡] [≡] [✕]  │
-├─────────────────────────────────────────────────────────────────────────────────┤
-│  WORK ORDER #WO-2401                                                             │
-│  ┌─────────────────────────────────────────────────────────────────────────────┐ │
-│  │ Status: 🟡 IN PROGRESS        Priority: 🔴 HIGH       Created: 2026-04-30   │ │
-│  │ Server: Storage-Node-03 (Cluster fi)    Assigned to: Andi (T1)              │ │
-│  └─────────────────────────────────────────────────────────────────────────────┘ │
-│                                                                                   │
-│  📋 Issue Description:                                                            │
-│  ┌─────────────────────────────────────────────────────────────────────────────┐ │
-│  │ HDD Failure - CSSD not detected on boot. Error code: 0x7A. Need to replace  │ │
-│  │ the storage module immediately to restore production.                        │ │
-│  └─────────────────────────────────────────────────────────────────────────────┘ │
-│                                                                                   │
-│  🔧 Part Required:                                                                │
-│  ┌─────────────────────────────────────────────────────────────────────────────┐ │
-│  │ Part Number: [1152230-03___________]  [CARI]                                │ │
-│  │                                                                              │ │
-│  │ ╔═════════════════════════════════════════════════════════════════════════╗ │ │
-│  │ ║  🔍 GPN: 1152230-03                                    [✕]              ║ │ │
-│  │ ║  📝 CSSD-Saola, Extra Secure Case, 128GB Raw, 100GB Useable             ║ │ │
-│  │ ║  🟢 STOK: TERSEDIA (1 pcs)  ✅ SIAP AMBIL                                ║ │ │
-│  │ ║  📍 LOKASI: PHARMACY - P201C01 (Rak 3 - Bin 12)                          ║ │ │
-│  │ ║  ┌───────────────────────────────────────────────────────────────────┐  ║ │ │
-│  │ ║  │                   PETA PHARMACY (Cluster fi)                       │  ║ │ │
-│  │ ║  │         [P201C01⭐] [P201C02] [P201C03] [P201C04]                  │  ║ │ │
-│  │ ║  │         [P201C05]  [P201C06]  [P201C07]  [P201C08]                 │  ║ │ │
-│  │ ║  │         ⭐ = LOKASI PART ANDA                                       │  ║ │ │
-│  │ ║  └───────────────────────────────────────────────────────────────────┘  ║ │ │
-│  │ ║  [✓ AMBIL PART SEKARANG]                                                ║ │ │
-│  │ ╚═════════════════════════════════════════════════════════════════════════╝ │ │
-│  │                                                                              │ │
-│  └─────────────────────────────────────────────────────────────────────────────┘ │
-│                                                                                   │
-│  [✓ SAVE WORK ORDER]  [✕ CANCEL]                                                  │
-└─────────────────────────────────────────────────────────────────────────────────┘
+            <div class="prototype-title">
+                <i class="fas fa-pencil-ruler"></i> High Fidelity 1
             </div>
-            <div class="screenshot-caption" style="margin-top: 0.5rem;">
-                <i class="fas fa-info-circle"></i> Card GPN Finder muncul saat mouse hover di field Part Number selama 0,5 detik. Menampilkan stok, deskripsi, lokasi, peta, dan tombol ambil part.
+            <div class="emergency-card">
+                <img src="high-fidelity-cluster.png" alt="High fidelity cluster" style="max-width:100%; border-radius: 12px;">
+                <div class="screenshot-caption" style="margin-top: 0.75rem;">
+                    <i class="fas fa-image"></i> Gambar 6.3 – Tampilan high-fidelity fitur GPN Finder pada mode normal.
+                </div>
             </div>
         </div>
 
         <div class="prototype-card">
             <div class="prototype-title">
-                <i class="fas fa-bolt"></i> Mockup Emergency Mode (Aktif)
+                <i class="fas fa-pencil-ruler"></i> High Fidelity 2
             </div>
-            <p>Ketika teknisi menekan tombol ⚡ (Emergency Mode) di pojok kanan atas, antarmuka Thalos berubah menjadi mode darurat dengan prioritas pencarian part dan menyembunyikan elemen yang tidak penting.</p>
-            <div class="ascii-art">
-┌─────────────────────────────────────────────────────────────────────────────────┐
-│  🚨 EMERGENCY MODE ACTIVE - DOWNTIME: 00:12:34                        [EXIT]    │
-├─────────────────────────────────────────────────────────────────────────────────┤
-│                                                                                   │
-│  ┌─────────────────────────────────────────────────────────────────────────────┐ │
-│  │  🔍 PART NUMBER SCANNER (Emergency)                                         │ │
-│  │  ┌───────────────────────────────────────────────────────────────────────┐ │ │
-│  │  │  [1152230-03___________________]  [CARI]  [📷 SCAN BARCODE]           │ │ │
-│  │  └───────────────────────────────────────────────────────────────────────┘ │ │
-│  │                                                                              │ │
-│  │  ╔═══════════════════════════════════════════════════════════════════════╗ │ │
-│  │  ║  ⚙️ CSSD-Saola | 128GB Raw | Kioxia BICS5                            ║ │ │
-│  │  ║  🟢 STOK: TERSEDIA (1 pcs)  ✅ SIAP AMBIL                             ║ │ │
-│  │  ║  📍 LOKASI: PHARMACY - P201C01 (Rak 3 - Bin 12)                       ║ │ │
-│  │  ║  ┌─────────────────────────────────────────────────────────────────┐  ║ │ │
-│  │  ║  │                    PETA PHARMACY (Emergency)                     │  ║ │ │
-│  │  ║  │  [P201C01⭐] [P201C02] [P201C03] [P201C04]                       │  ║ │ │
-│  │  ║  │  [P201C05]  [P201C06]  [P201C07]  [P201C08]                      │  ║ │ │
-│  │  ║  │  ⭐ = LOKASI PART (P201C01) - JARAK: 25 meter                     │  ║ │ │
-│  │  ║  └─────────────────────────────────────────────────────────────────┘  ║ │ │
-│  │  ║                                                                        ║ │ │
-│  │  ║  [✓ AMBIL PART SEKARANG]  (otomatis kurangi stok & update work order)  ║ │ │
-│  │  ╚═══════════════════════════════════════════════════════════════════════╝ │ │
-│  │                                                                              │ │
-│  └─────────────────────────────────────────────────────────────────────────────┘ │
-│                                                                                   │
-│  ❌ SEMUA MENU TIDAK PENTING DISEMBUNYIKAN (Dashboard, Settings, Reports)        │
-└─────────────────────────────────────────────────────────────────────────────────┘
+            <div class="emergency-card">
+                <img src="high-fidelity.png" alt="High fidelity wireframe" style="max-width:100%; border-radius: 12px;">
+                <div class="screenshot-caption" style="margin-top: 0.75rem;">
+                    <i class="fas fa-image"></i> Gambar 6.4 – Detail tampilan card GPN Finder dengan informasi stok, lokasi, dan peta pharmacy.
+                </div>
             </div>
             <div class="screenshot-caption" style="margin-top: 0.5rem;">
-                <i class="fas fa-info-circle"></i> Emergency Mode menyembunyikan menu administratif, memperbesar area pencarian, menambahkan estimasi jarak dari lokasi teknisi ke rak part, serta menyediakan tombol ambil part satu klik.
+                <i class="fas fa-info-circle"></i> Stok Part berwarna merah, maka stok sedang kosong.
             </div>
         </div>
 
@@ -797,20 +635,15 @@
         <h2>BAB 7 – USABILITY TESTING</h2>
         <div class="sub-bab">7.1 Metode</div>
         <p>6 teknisi yang sama diminta melakukan 3 tugas menggunakan Thalos yang sudah diintegrasikan dengan GPN Finder v2.0: (T1) cek stok part CSSD-Saola dengan GPN 1152230-03 dari work order, (T2) temukan lokasi part di pharmacy (P201C01) menggunakan peta visual, (T3) tandai part telah diambil dan update Thalos. Diukur waktu, task success, dan SUS.</p>
-        <div class="sub-bab">7.2 Hasil</div>
+         <div class="sub-bab">7.2 Hasil</div>
         <table class="tabel-analisis">
             <thead><tr><th>Metrik</th><th>Thalos Tanpa GPN Finder</th><th>Thalos + GPN Finder v2.0</th><th>Perubahan</th></tr></thead>
             <tbody>
-                <tr><td>Rata-rata T1 (cek stok)</td><td>47 detik</th><td>6 detik</th><td>✅ -87%</th>
-                </tr>
-                <tr><td>Rata-rata T2 (cari lokasi)从<td>52 detik</th><td>9 detik</th><td>✅ -83%</th>
-                </tr>
-                <tr><td>Klik untuk tandai part</th><td>4 klik (di menu terpisah)</th><td>1 klik (dari GPN Finder)</th><td>✅ -75%</th>
-                </tr>
-                <tr><td>Task success rate</th><td>72%</th><td>96%</th><td>✅ +24%</th>
-                </tr>
-                <tr><td>SUS Score</th><td>51 (Poor)</th><td>89 (Excellent)</th><td>✅ +38 poin</th>
-                </tr>
+                <tr><td>Rata-rata T1 (cek stok)</td><td>47 detik</td><td>6 detik</td><td>✅ -87%</td></tr>
+                <tr><td>Rata-rata T2 (cari lokasi)</td><td>52 detik</td><td>9 detik</td><td>✅ -83%</td></tr>
+                <tr><td>Klik untuk tandai part</td><td>4 klik (di menu terpisah)</td><td>1 klik (dari GPN Finder)</td><td>✅ -75%</td></tr>
+                <tr><td>Task success rate</td><td>72%</td><td>96%</td><td>✅ +24%</td></tr>
+                <tr><td>SUS Score</td><td>51 (Poor)</td><td>89 (Excellent)</td><td>✅ +38 poin</td></tr>
             </tbody>
         </table>
         <div class="insight-box">
@@ -821,57 +654,65 @@
     </div>
 
     <!-- ==================== BAB 8 ==================== -->
-    <div class="bab" id="bab8">
-        <h2>BAB 8 – ITERASI</h2>
-        <div class="sub-bab">8.1 Temuan Selama Testing</div>
-        <ul>
-            <li>Hover delay 0,2 detik terlalu sensitif (GPN Finder muncul saat mouse hanya lewat).</li>
-            <li>Beberapa teknisi minta ringkasan part yang sudah diambil hari ini untuk menghindari pengambilan ganda oleh teknisi lain.</li>
-            <li>Peta sederhana (4x2 grid) sudah cukup untuk cluster fi, tetapi perlu scalable untuk pharmacy lain.</li>
-            <li>Tombol Emergency Mode perlu lebih besar dan kontras agar mudah ditemukan saat panik.</li>
-        </ul>
-        <div class="sub-bab">8.2 Tindakan Iterasi</div>
-        <table class="tabel-analisis">
-            <thead>
-                <tr><th>Iterasi</th><th>Perubahan pada GPN Finder di Thalos</th><th>Hasil</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr><td>#1</td><td>Hover delay diubah dari 0,2 detik menjadi 0,5 detik + hanya jika mouse diam</td><td>Muncul tidak sengaja hilang, teknisi lebih nyaman</td>
-                </tr>
-                <tr><td>#2</td><td>Tombol "🕐 Diambil hari ini" (progressive disclosure) ditambahkan</td><td>Memenuhi kebutuhan histori tanpa mengganggu UI utama</td>
-                </tr>
-                <tr><td>#3</td><td>Peta dinamis dengan kode rak (P201C01-P201C08) yang scalable</td><td>Dapat digunakan untuk pharmacy besar maupun kecil</td>
-                </tr>
-                <tr><td>#4</td><td>Tombol Emergency Mode diperbesar dan diberi warna merah terang dengan ikon ⚡</td><td>100% teknisi dapat menemukan tombol dalam 1 detik</td>
-                </tr>
-            </tbody>
-        </table>
-        <div class="quote-box">
-            🎯 <strong>Final SUS Score setelah iterasi: 92 (Best Imaginable)</strong><br>
-            Waktu cek stok & lokasi part turun dari 73 detik menjadi <strong>12 detik</strong>.<br>
-            Seluruh teknisi menyatakan akan menggunakan fitur GPN Finder setiap hari.
-        </div>
+   <!-- ==================== BAB 8 ==================== -->
+<div class="bab" id="bab8">
+    <h2>BAB 8 – ITERASI</h2>
+   <div class="sub-bab">8.1 Temuan Selama Testing</div>
+<ul>
+    <li>Hover delay 0,2 detik terlalu sensitif (GPN Finder muncul saat mouse hanya lewat).</li>
+    <li>Beberapa teknisi minta ringkasan part yang sudah diambil hari ini untuk menghindari pengambilan ganda oleh teknisi lain.</li>
+    <li><strong>Peta sederhana (4x2 grid) sudah cukup, namun ekstensi GPN Finder sudah mendukung filter cluster (fi, fo, fj, dll.)</strong> sehingga peta pharmacy akan berubah sesuai cluster yang dipilih oleh teknisi. Tidak perlu pengembangan tambahan untuk pharmacy lain karena filter cluster telah tersedia.</li>
+  
+</ul>
+    <div class="sub-bab">8.2 Tindakan Iterasi</div>
+    <table class="tabel-analisis">
+        <thead>
+            <tr><th>Iterasi</th><th>Perubahan pada GPN Finder di Thalos</th><th>Hasil</th></tr>
+        </thead>
+        <tbody>
+            <tr><td><strong>#1</strong></td>
+                <td><strong>Indikator stok real-time langsung di daftar part</strong> – Menambahkan badge hijau (tersedia) dan merah (habis) pada setiap baris part di halaman work order, tanpa perlu hover atau klik tambahan.</td>
+                <td>Teknisi langsung tahu ketersediaan part dalam < 1 detik. Rata-rata waktu cek stok turun dari 47 detik menjadi 5 detik.</td>
+            </tr>
+            <tr><td><strong>#2</strong></td>
+                <td><strong>Peta visual pharmacy dinamis</strong> – Mengganti teks koordinat (misal "Rak 3 Bin 12") dengan peta grid 2x4 yang menampilkan kode rak (P201C01–P201C08) dan menyorot lokasi part dengan warna biru.</td>
+                <td>Tingkat keberhasilan menemukan lokasi part meningkat dari 67% menjadi 98%. Waku pencarian fisik di pharmacy berkurang 83%.</td>
+            </tr>
+            <tr><td><strong>#3</strong></td>
+                <td><strong>Tombol "Ambil Part" satu klik</strong> – Menambahkan tombol aksi langsung pada card GPN Finder yang secara otomatis mengurangi stok, mencatat pengambilan, dan mengupdate work order.</td>
+                <td>Proses pengambilan part dari 4 klik (buka menu terpisah) menjadi 1 klik. Pengguna melaporkan penghematan waktu signifikan dan mengurangi kesalahan entri data.</td>
+            </tr>
+            <tr><td><strong>#4</strong></td>
+                <td><strong>Peringatan stok habis (out-of-stock alert)</strong> – Sistem menampilkan notifikasi merah dan menonaktifkan tombol "Ambil Part" jika stok = 0, serta menawarkan alternatif part pengganti (jika ada).</td>
+                <td>Menghilangkan kunjungan sia-sia ke pharmacy karena part habis. Teknisi melaporkan penurunan frustrasi dan waktu bolak-balik hingga 90%.</td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="quote-box">
+        🎯 <strong>Final SUS Score setelah iterasi: 92 (Best Imaginable)</strong><br>
+        Waktu cek stok & lokasi part turun dari 73 detik menjadi <strong>12 detik</strong> (peningkatan 83,6%).<br>
+        Seluruh teknisi menyatakan akan menggunakan fitur GPN Finder setiap hari.
     </div>
-
+</div>
     <!-- ==================== BAB 9 ==================== -->
-    <div class="bab" id="bab9">
-        <h2>BAB 9 – KESIMPULAN</h2>
-        <p>Berdasarkan penelitian yang dilakukan pada sistem Service Management Thalos di Data Center, dapat disimpulkan:</p>
-        <ol style="margin-left:2rem; margin-bottom:1rem;">
-            <li><strong>Masalah utama</strong> adalah Thalos belum memiliki fitur pencarian part yang terintegrasi, sehingga teknisi tidak mengetahui stok dan lokasi part sebelum datang ke pharmacy. Hal ini menyebabkan waktu pencarian rata-rata 19,7 menit dan memperpanjang downtime server.</li>
-            <li><strong>Penambahan fitur GPN Finder versi 2.0</strong> ke dalam Thalos terbukti mampu memangkas waktu cek stok & lokasi part dari 73 detik menjadi 12 detik (peningkatan 83,6%). Fitur ini menampilkan daftar GPN, deskripsi part, dan lokasi pharmacy (P201C01, P201C06, dll.) langsung di halaman work order, memanfaatkan data yang sudah tersedia di database Thalos.</li>
-            <li><strong>Pendekatan HCD 5 tahap</strong> (Empathize, Define, Ideate, Prototype, Test) berhasil meningkatkan pengalaman pengguna Thalos secara signifikan, dengan SUS Score naik dari 51 (Poor) menjadi 92 (Best Imaginable) setelah iterasi.</li>
-            <li><strong>Rekomendasi implementasi:</strong> Tim pengembang Thalos segera mengintegrasikan GPN Finder v2.0 ke dalam sistem, melakukan push update ke semua client, menyediakan peta digital untuk setiap pharmacy (berdasarkan kode rak seperti P201C01–P201C08), dan melakukan evaluasi usability berkala setiap 3 bulan.</li>
-        </ol>
-        <div class="sub-bab-3">Rekomendasi Jangka Panjang</div>
-        <ul>
-            <li>Tambahkan fitur barcode scanner pada GPN Finder untuk verifikasi part saat diambil, terintegrasi dengan daftar GPN yang ada.</li>
-            <li>Integrasikan dengan sistem AI untuk prediksi part yang sering habis (berdasarkan data quantity historis dari tabel GPN).</li>
-            <li>Sediakan offline mode untuk GPN Finder (cache 100 part teratas) ketika koneksi ke Thalos terputus.</li>
-            <li>Kembangkan fitur multi-cluster untuk teknisi yang bertugas di beberapa area pharmacy berbeda (cluster fi, cluster us, cluster eu, dll.).</li>
-        </ul>
-    </div>
+   <!-- ==================== BAB 9 ==================== -->
+<div class="bab" id="bab9">
+    <h2>BAB 9 – KESIMPULAN</h2>
+    <p>Berdasarkan penelitian yang dilakukan pada sistem Service Management Thalos di Data Center, dapat disimpulkan:</p>
+    <ol style="margin-left:2rem; margin-bottom:1rem;">
+        <li><strong>Masalah utama</strong> adalah Thalos tidak menyediakan informasi stok dan lokasi part secara terintegrasi di halaman work order, sehingga teknisi tidak mengetahui ketersediaan dan posisi part sebelum datang ke pharmacy. Hal ini menyebabkan waktu pencarian rata-rata 19,7 menit dan memperpanjang downtime server.</li>
+        <li><strong>Fitur GPN Finder versi 2.0 yang dikembangkan sebagai ekstensi Chrome</strong> terbukti mampu memangkas waktu cek stok & lokasi part dari 73 detik menjadi 12 detik (peningkatan 83,6%). Ekstensi ini bekerja secara non-intrusif di atas antarmuka Thalos (tanpa mengubah kode sumber aplikasi internal) dengan cara menyuntikkan (inject) card informasi GPN, deskripsi part, dan lokasi pharmacy (P201C01, P201C06, dll.) langsung ke halaman work order yang sudah ada. Data yang ditampilkan memanfaatkan database Thalos yang sudah tersedia melalui mekanisme pembacaan DOM atau API yang tidak mengganggu sistem inti.</li>
+        <li><strong>Pendekatan HCD 5 tahap</strong> (Empathize, Define, Ideate, Prototype, Test) berhasil meningkatkan pengalaman pengguna Thalos secara signifikan, dengan SUS Score naik dari 51 (Poor) menjadi 92 (Best Imaginable) setelah iterasi. Karena ekstensi bersifat independen, tim teknisi dapat segera mendapat manfaat tanpa menunggu jadwal rilis atau perubahan pada backend Thalos.</li>
+        <li><strong>Rekomendasi implementasi:</strong> Tim pengembang segera menyelesaikan dan mempublikasikan ekstensi GPN Finder di Chrome Web Store untuk diinstal oleh seluruh teknisi. Cukup dengan memasang ekstensi, setiap teknisi akan mendapatkan fitur pencarian part instan pada Thalos tanpa perlu modifikasi aplikasi internal. Disarankan juga untuk menyediakan peta digital untuk setiap pharmacy (berdasarkan kode rak seperti P201C01–P201C08) dalam bentuk overlay pada ekstensi, serta melakukan evaluasi usability berkala setiap 3 bulan untuk penyesuaian terhadap perubahan antarmuka Thalos.</li>
+    </ol>
+   <div class="sub-bab-3">Rekomendasi Jangka Panjang</div>
+<ul>
+    <li><strong>Fitur barcode scanner dan pemilihan multi-cluster (fi, us, eu, dll.) sudah tersedia</strong> pada ekstensi GPN Finder versi 2.0. Teknisi dapat langsung memindai barcode part untuk verifikasi dan memilih cluster pharmacy yang sesuai dari panel ekstensi.</li>
+    <li><strong>Integrasikan dengan sistem AI untuk prediksi part yang sering habis</strong> – Berdasarkan data quantity historis dari tabel GPN, ekstensi dapat menampilkan notifikasi pintar (misalnya "Part ini sering habis, segera request stok") untuk membantu perencanaan inventaris.</li>
+    <li><strong>Sediakan offline mode untuk GPN Finder</strong> – Cache 100 part teratas beserta lokasinya sehingga teknisi tetap bisa mengakses informasi stok dan lokasi meskipun koneksi ke database Thalos terputus (misalnya saat bekerja di area dengan sinyal lemah).</li>
+    <li><strong>Tambahkan fitur history pengambilan part per teknisi</strong> – Catat log part yang telah diambil melalui ekstensi untuk memudahkan audit dan menghindari pengambilan ganda oleh teknisi lain dalam shift yang sama.</li>
+    <li><strong>Kembangkan mode dark / high contrast</strong> untuk ekstensi guna mengakomodasi preferensi visual teknisi yang bekerja di ruang server dengan pencahayaan minim.</li>
+</ul>
 
     <!-- LAMPIRAN -->
     <div class="bab" id="lampiran">
@@ -888,7 +729,7 @@
         <div class="sub-bab-3">Lampiran D – Tampilan Lengkap GPN Pharmacy Finder Version 2.0</div>
         <p>Gambar 5.1a, 5.1b, 5.2a, dan 5.2b pada BAB 5 menunjukkan antarmuka GPN Pharmacy Finder yang telah berhasil dikembangkan. Fitur ini memungkinkan teknisi untuk memilih cluster default (fi), melihat daftar GPN (1184689-01, 1152230-03, dll.), deskripsi part lengkap, serta lokasi pharmacy (P201C01, P201C06). Seluruh data ini siap diintegrasikan ke Thalos.</p>
         <div class="sub-bab-3">Lampiran E – Prototype Figma Link</div>
-        <p>Link prototype interaktif: <a href="#" style="color:#1f4870;">https://figma.com/proto/thalos-gpn-finder-v2</a> (Password: thalos2026).</p>
+        <p><iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://embed.figma.com/proto/HDlEzcwRLHmFPXJNf50ezc/prototype-find-GPN?node-id=13-282&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=13%3A282&embed-host=share" allowfullscreen></iframe></p>
     </div>
 
     <div class="ttd">
