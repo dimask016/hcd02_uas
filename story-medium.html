@@ -35,7 +35,6 @@
             overflow-x: hidden;
         }
 
-        /* Progress bar */
         #progress-bar {
             position: fixed;
             top: 0;
@@ -53,7 +52,6 @@
             padding: 0 24px;
         }
 
-        /* Hero */
         .hero {
             padding: 100px 0 60px;
             text-align: center;
@@ -90,16 +88,10 @@
             animation: bounce 2s infinite;
         }
         @keyframes bounce {
-            0%,
-            100% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(8px);
-            }
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(8px); }
         }
 
-        /* Sections */
         .section {
             padding: 70px 0;
             opacity: 0;
@@ -166,7 +158,6 @@
             display: block;
         }
 
-        /* Problem cards */
         .problem-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -190,7 +181,6 @@
             margin-bottom: 0.8rem;
         }
 
-        /* Timeline 5 fase */
         .timeline {
             position: relative;
             margin: 2.5rem 0;
@@ -205,7 +195,6 @@
             width: 3px;
             background: #e5e7eb;
             border-radius: 3px;
-            transition: background 0.5s;
         }
         .timeline-item {
             position: relative;
@@ -245,7 +234,6 @@
             margin-bottom: 0.3rem;
         }
 
-        /* Comparison table */
         .comparison-table {
             width: 100%;
             border-collapse: separate;
@@ -283,7 +271,6 @@
             content: '✅ ';
         }
 
-        /* Stat counters */
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -316,14 +303,7 @@
             color: var(--text-light);
             font-weight: 500;
         }
-        .highlight-green {
-            color: var(--success);
-        }
-        .highlight-danger {
-            color: var(--danger);
-        }
 
-        /* Button */
         .btn {
             display: inline-block;
             background: var(--accent);
@@ -349,22 +329,15 @@
         }
 
         @media (max-width: 600px) {
-            .section {
-                padding: 50px 0;
-            }
-            .timeline {
-                padding-left: 1.5rem;
-            }
-            .stat-card .number {
-                font-size: 2.8rem;
-            }
+            .section { padding: 50px 0; }
+            .timeline { padding-left: 1.5rem; }
+            .stat-card .number { font-size: 2.8rem; }
         }
     </style>
 </head>
 <body>
     <div id="progress-bar"></div>
 
-    <!-- Hero -->
     <header class="hero container">
         <h1>Bagaimana Satu Fitur Kecil Mampu Memangkas Waktu Perbaikan Server hingga 83,6%</h1>
         <p class="subtitle">Sebuah Kisah Nyata dari Lantai Data Center</p>
@@ -373,20 +346,17 @@
     </header>
 
     <main class="container">
-        <!-- Quote pembuka -->
         <div class="quote" id="openingQuote">
             “Saya seperti orang buta kalau pakai Thalos untuk cari part.”
             <span class="quote-author">— Teknisi Data Center</span>
         </div>
 
-        <!-- Section: Pahlawan -->
         <section class="section" id="sectionHeroes">
             <h2>Pahlawan yang Terlupakan</h2>
             <p>Tokoh utama kita adalah enam orang teknisi data center: <strong>Fahmi, Didit, Alex, Nisa, Dimas, dan Prima</strong>. Setiap hari mereka berjuang melawan waktu untuk memperbaiki server kritis. Setiap detik berarti kerugian. Namun mereka memiliki musuh tak terlihat: <strong>ketidaktahuan akan stok dan lokasi komponen</strong>.</p>
             <p>Mereka adalah para pahlawan di balik layar yang terhambat oleh sistem yang seharusnya membantu.</p>
         </section>
 
-        <!-- Dua Monster -->
         <section class="section" id="sectionMonsters">
             <h2>Dua Monster Bernama “Tidak Tahu”</h2>
             <div class="problem-grid">
@@ -404,7 +374,6 @@
             <p style="margin-top:1.5rem;">83% teknisi mengaku melakukan pencarian buta ini setiap hari. Skenario paling menyakitkan: “Saya cari 20 menit, ternyata part-nya habis.”</p>
         </section>
 
-        <!-- Misi: 5 Fase HCD -->
         <section class="section" id="sectionMission">
             <h2>Misi Rahasia: Memanusiakan “Thalos”</h2>
             <p>Sistem internal <strong>Thalos</strong> sudah digunakan untuk mengelola pekerjaan, namun gagal menjawab dua pertanyaan paling penting secara cepat. Saya pun menerapkan <strong>Human‑Centered Design (HCD)</strong> dalam 5 fase:</p>
@@ -438,7 +407,6 @@
             <p style="margin-top:1rem;"><em>Dari fase Ideate inilah lahir konsep <strong>GPN Finder</strong>, yang kemudian diwujudkan dan diuji.</em></p>
         </section>
 
-        <!-- GPN Finder: Before/After comparison -->
         <section class="section" id="sectionSolution">
             <h2>GPN Finder: Dari Sketsa Menjadi Senjata Rahasia</h2>
             <p>GPN Finder bukan aplikasi baru, melainkan ekstensi kecil yang terintegrasi mulus ke dalam Thalos. Berikut perbandingannya:</p>
@@ -479,7 +447,6 @@
             </div>
         </section>
 
-        <!-- Detik Penentuan & Hasil -->
         <section class="section" id="sectionResults">
             <h2>Detik-Detik Penentuan: Hasil yang Mengejutkan</h2>
             <p>Uji coba dilakukan dengan tugas yang sama, membandingkan Thalos lama vs Thalos + GPN Finder v2.0.</p>
@@ -508,12 +475,11 @@
             </div>
         </section>
 
-        <!-- Pelajaran -->
         <section class="section" id="sectionLesson">
             <h2>Pelajaran Berharga di Balik Layar</h2>
             <p>Solusi ini tidak memerlukan biaya besar atau perubahan sistem rumit. GPN Finder adalah ekstensi browser yang dapat langsung dipasang semua teknisi tanpa menunggu rilis besar. Sebuah bukti bahwa <strong>solusi paling elegan seringkali lahir dari mendengarkan, mengamati, dan berempati</strong>.</p>
             <p>Dengan satu fitur kecil, <em>downtime</em> server berkurang, frustrasi lenyap, dan para pahlawan di lantai data center kembali tersenyum.</p>
-            <a href="#" class="btn" style="margin-top:1rem;">Lihat Prototipe Figma Publik<iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://embed.figma.com/proto/HDlEzcwRLHmFPXJNf50ezc/prototype-find-GPN?node-id=13-282&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=13%3A282&embed-host=share" allowfullscreen></iframe></a>
+            <a href="#" class="btn" style="margin-top:1rem;">🔗 Lihat Prototipe Figma Publik</a>
         </section>
     </main>
 
@@ -532,7 +498,6 @@
                 document.getElementById('progress-bar').style.width = scrolled + '%';
             });
 
-            // Intersection Observer for sections, quotes, table, stats, timeline items
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
@@ -547,40 +512,37 @@
                         }
                         if (entry.target.classList.contains('timeline-item')) {
                             entry.target.classList.add('visible-timeline');
-                            // Also highlight the corresponding phase line? We can animate the timeline::before
                         }
                         if (entry.target.classList.contains('stat-card')) {
                             entry.target.classList.add('visible-stat');
-                            // Start counting for this card
                             const numberEl = entry.target.querySelector('.number');
                             if (numberEl && !entry.target.dataset.counted) {
                                 entry.target.dataset.counted = 'true';
                                 animateValue(numberEl, 0, parseFloat(entry.target.dataset.target), 1500, entry.target.dataset.prefix || '', entry.target.dataset.suffix || '');
                             }
                         }
-                        // For the stats grid container, we can also trigger children animation, but each card has own observer.
-                        // We'll observe each stat-card directly.
                     }
                 });
             }, { threshold: 0.2 });
 
-            // Observe sections
             document.querySelectorAll('.section').forEach(section => observer.observe(section));
-            // Observe quotes
             document.querySelectorAll('.quote').forEach(quote => observer.observe(quote));
-            // Observe comparison table
-            document.querySelector('#comparisonTable').forEach(el => observer.observe(el));
-            // Observe timeline items
-            document.querySelectorAll('.timeline-item').forEach(item => observer.observe(item));
-            // Observe stat cards
-            document.querySelectorAll('.stat-card').forEach(card => observer.observe(card));
-            // Also observe opening quote if not already
-            observer.observe(document.getElementById('openingQuote'));
 
-            // Animate number function
+            // PERBAIKAN: querySelector mengembalikan satu elemen, bukan NodeList
+            const comparisonTable = document.querySelector('#comparisonTable');
+            if (comparisonTable) {
+                observer.observe(comparisonTable);
+            }
+
+            document.querySelectorAll('.timeline-item').forEach(item => observer.observe(item));
+            document.querySelectorAll('.stat-card').forEach(card => observer.observe(card));
+
+            const openingQuote = document.getElementById('openingQuote');
+            if (openingQuote) observer.observe(openingQuote);
+
             function animateValue(element, start, end, duration, prefix, suffix) {
                 const range = end - start;
-                const increment = range / (duration / 16); // approx 60fps
+                const increment = range / (duration / 16);
                 let current = start;
                 const step = () => {
                     current += increment;
@@ -595,14 +557,11 @@
             }
 
             function formatNumber(num) {
-                // If it's a float like 83.6, keep one decimal, else integer
                 if (num % 1 !== 0) {
                     return num.toFixed(1);
                 }
                 return Math.floor(num);
             }
-
-            // Additional: highlight active timeline phase based on scroll? Could be done but simple intersection is fine.
         })();
     </script>
 </body>
