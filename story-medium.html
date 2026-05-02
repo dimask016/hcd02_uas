@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPN Finder: Memangkas Waktu Perbaikan Server hingga 83,6%</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #f9fafc;
+            --card-bg: #ffffff;
+            --text: #1a1a2e;
+            --text-light: #4a4a6a;
+            --accent: #0d6efd;
+            --accent-glow: #0d6efd33;
+            --danger: #dc3545;
+            --success: #198754;
+            --warning: #ffc107;
+            --border: #e5e7eb;
+            --shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+            --radius: 16px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        /* Progress bar */
+        #progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #0d6efd, #6610f2);
+            width: 0%;
+            z-index: 9999;
+            transition: width 0.2s ease;
+        }
+
+        .container {
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Hero */
+        .hero {
+            padding: 100px 0 60px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            background: radial-gradient(circle at 20% 50%, rgba(13, 110, 253, 0.06), transparent 50%),
+                radial-gradient(circle at 80% 30%, rgba(102, 16, 242, 0.04), transparent 50%);
+        }
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.4rem, 6vw, 3.8rem);
+            font-weight: 900;
+            line-height: 1.15;
+            margin-bottom: 1.2rem;
+            color: #0b0f2c;
+        }
+        .hero .subtitle {
+            font-size: 1.25rem;
+            color: var(--text-light);
+            max-width: 620px;
+            margin: 0 auto 1.5rem;
+            font-weight: 400;
+        }
+        .hero .author {
+            font-size: 0.95rem;
+            color: #6b7280;
+            margin-bottom: 2rem;
+        }
+        .hero .scroll-indicator {
+            display: inline-block;
+            margin-top: 2rem;
+            font-size: 0.9rem;
+            color: #6b7280;
+            animation: bounce 2s infinite;
+        }
+        @keyframes bounce {
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(8px);
+            }
+        }
+
+        /* Sections */
+        .section {
+            padding: 70px 0;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            position: relative;
+            display: inline-block;
+        }
+        .section h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: var(--accent);
+            margin-top: 0.5rem;
+            border-radius: 2px;
+        }
+
+        .quote {
+            font-style: italic;
+            background: var(--card-bg);
+            padding: 2rem 2rem 2rem 3rem;
+            border-left: 6px solid var(--accent);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            margin: 2rem 0;
+            font-size: 1.25rem;
+            font-weight: 500;
+            position: relative;
+            transform: translateX(-10px);
+            opacity: 0;
+            transition: all 0.7s ease;
+        }
+        .quote.visible-quote {
+            transform: translateX(0);
+            opacity: 1;
+        }
+        .quote::before {
+            content: '“';
+            font-size: 4rem;
+            color: var(--accent);
+            position: absolute;
+            left: 10px;
+            top: -10px;
+            font-family: serif;
+            line-height: 1;
+        }
+        .quote-author {
+            font-weight: 600;
+            color: var(--text-light);
+            margin-top: 0.5rem;
+            font-style: normal;
+            display: block;
+        }
+
+        /* Problem cards */
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .problem-card {
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            border-top: 5px solid var(--danger);
+            transition: transform 0.3s;
+        }
+        .problem-card h3 {
+            margin-bottom: 0.8rem;
+            font-size: 1.5rem;
+        }
+        .problem-card .icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.8rem;
+        }
+
+        /* Timeline 5 fase */
+        .timeline {
+            position: relative;
+            margin: 2.5rem 0;
+            padding-left: 2rem;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 12px;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: #e5e7eb;
+            border-radius: 3px;
+            transition: background 0.5s;
+        }
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2.5rem;
+            opacity: 0;
+            transform: translateX(20px);
+            transition: all 0.6s ease;
+        }
+        .timeline-item.visible-timeline {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -2.5rem;
+            top: 0.35rem;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--accent);
+            box-shadow: 0 0 0 4px #ffffff, 0 0 0 6px var(--accent-glow);
+            z-index: 1;
+        }
+        .timeline-item h3 {
+            font-weight: 700;
+            font-size: 1.35rem;
+            margin-bottom: 0.3rem;
+            color: #0b0f2c;
+        }
+        .timeline-item .phase-label {
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 0.3rem;
+        }
+
+        /* Comparison table */
+        .comparison-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin: 2rem 0;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            background: white;
+            opacity: 0;
+            transform: scale(0.97);
+            transition: all 0.7s ease;
+        }
+        .comparison-table.visible-table {
+            opacity: 1;
+            transform: scale(1);
+        }
+        .comparison-table th {
+            background: #f0f4ff;
+            padding: 1rem;
+            font-weight: 600;
+            text-align: left;
+            width: 33%;
+        }
+        .comparison-table td {
+            padding: 1rem;
+            border-bottom: 1px solid var(--border);
+            vertical-align: top;
+        }
+        .comparison-table .cross::before {
+            content: '✖️ ';
+            color: var(--danger);
+        }
+        .comparison-table .check::before {
+            content: '✅ ';
+        }
+
+        /* Stat counters */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 2.5rem 0;
+        }
+        .stat-card {
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            padding: 2rem 1.5rem;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transform: translateY(20px);
+            opacity: 0;
+            transition: all 0.6s ease;
+        }
+        .stat-card.visible-stat {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        .stat-card .number {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: var(--accent);
+            line-height: 1;
+            margin-bottom: 0.3rem;
+        }
+        .stat-card .label {
+            font-size: 1rem;
+            color: var(--text-light);
+            font-weight: 500;
+        }
+        .highlight-green {
+            color: var(--success);
+        }
+        .highlight-danger {
+            color: var(--danger);
+        }
+
+        /* Button */
+        .btn {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.2s, transform 0.1s;
+            box-shadow: 0 4px 14px rgba(13, 110, 253, 0.35);
+        }
+        .btn:hover {
+            background: #0b5ed7;
+            transform: translateY(-2px);
+        }
+
+        .footer {
+            text-align: center;
+            padding: 4rem 2rem;
+            color: #6b7280;
+            border-top: 1px solid var(--border);
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 600px) {
+            .section {
+                padding: 50px 0;
+            }
+            .timeline {
+                padding-left: 1.5rem;
+            }
+            .stat-card .number {
+                font-size: 2.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="progress-bar"></div>
+
+    <!-- Hero -->
+    <header class="hero container">
+        <h1>Bagaimana Satu Fitur Kecil Mampu Memangkas Waktu Perbaikan Server hingga 83,6%</h1>
+        <p class="subtitle">Sebuah Kisah Nyata dari Lantai Data Center</p>
+        <p class="author">Oleh Dimas Kurniawan · Diadaptasi dari Laporan Tugas Akhir Human-Centered Design</p>
+        <div class="scroll-indicator">⬇ Gulir untuk membaca kisahnya</div>
+    </header>
+
+    <main class="container">
+        <!-- Quote pembuka -->
+        <div class="quote" id="openingQuote">
+            “Saya seperti orang buta kalau pakai Thalos untuk cari part.”
+            <span class="quote-author">— Teknisi Data Center</span>
+        </div>
+
+        <!-- Section: Pahlawan -->
+        <section class="section" id="sectionHeroes">
+            <h2>Pahlawan yang Terlupakan</h2>
+            <p>Tokoh utama kita adalah enam orang teknisi data center: <strong>Fahmi, Didit, Alex, Nisa, Dimas, dan Prima</strong>. Setiap hari mereka berjuang melawan waktu untuk memperbaiki server kritis. Setiap detik berarti kerugian. Namun mereka memiliki musuh tak terlihat: <strong>ketidaktahuan akan stok dan lokasi komponen</strong>.</p>
+            <p>Mereka adalah para pahlawan di balik layar yang terhambat oleh sistem yang seharusnya membantu.</p>
+        </section>
+
+        <!-- Dua Monster -->
+        <section class="section" id="sectionMonsters">
+            <h2>Dua Monster Bernama “Tidak Tahu”</h2>
+            <div class="problem-grid">
+                <div class="problem-card">
+                    <div class="icon">📦</div>
+                    <h3>Ketidaktahuan Stok</h3>
+                    <p>Sebelum ke ruang penyimpanan (<em>pharmacy</em>), teknisi tidak pernah tahu apakah GPU atau BIOS chip tersedia. Mereka bertanya ke admin atau mencari manual.</p>
+                </div>
+                <div class="problem-card">
+                    <div class="icon">🗺️</div>
+                    <h3>Ketidaktahuan Lokasi</h3>
+                    <p><em>Pharmacy</em> dipenuhi rak dan laci. Tanpa peta, mencari satu part seperti mencari jarum dalam tumpukan jerami. Rata‑rata <strong>19,7 menit</strong> terbuang sia‑sia.</p>
+                </div>
+            </div>
+            <p style="margin-top:1.5rem;">83% teknisi mengaku melakukan pencarian buta ini setiap hari. Skenario paling menyakitkan: “Saya cari 20 menit, ternyata part-nya habis.”</p>
+        </section>
+
+        <!-- Misi: 5 Fase HCD -->
+        <section class="section" id="sectionMission">
+            <h2>Misi Rahasia: Memanusiakan “Thalos”</h2>
+            <p>Sistem internal <strong>Thalos</strong> sudah digunakan untuk mengelola pekerjaan, namun gagal menjawab dua pertanyaan paling penting secara cepat. Saya pun menerapkan <strong>Human‑Centered Design (HCD)</strong> dalam 5 fase:</p>
+            <div class="timeline" id="timelineContainer">
+                <div class="timeline-item" data-phase="1">
+                    <div class="phase-label">Fase 1 — Empathize</div>
+                    <h3>Menyelami Dunia Teknisi</h3>
+                    <p>Saya membayangi teknisi, melihat langsung mereka harus membuka 7–9 layer menu hanya untuk mengecek stok, dan label rak yang tidak diperbarui membuat frustrasi.</p>
+                </div>
+                <div class="timeline-item" data-phase="2">
+                    <div class="phase-label">Fase 2 — Define</div>
+                    <h3>Merumuskan Inti Masalah</h3>
+                    <p>Karena Thalos tidak intuitif, teknisi menjadi “buta” soal stok dan lokasi. Merekalah pahlawan yang terhambat sistemnya sendiri.</p>
+                </div>
+                <div class="timeline-item" data-phase="3">
+                    <div class="phase-label">Fase 3 — Ideate</div>
+                    <h3>Brainstorming Solusi</h3>
+                    <p>Bersama teknisi, kami menggagas ide: bagaimana jika stok & lokasi langsung muncul di halaman kerja? Dan peta visual, bukan teks koordinat yang membingungkan?</p>
+                </div>
+                <div class="timeline-item" data-phase="4">
+                    <div class="phase-label">Fase 4 — Prototype</div>
+                    <h3>Dari Kertas ke Figma</h3>
+                    <p>Sketsa kasar berubah menjadi prototipe digital yang bisa diklik. Kami mengujinya dengan masukan langsung dari para teknisi.</p>
+                </div>
+                <div class="timeline-item" data-phase="5">
+                    <div class="phase-label">Fase 5 — Test</div>
+                    <h3>Uji Nyata di Lapangan</h3>
+                    <p>Prototipe final diujikan kepada keenam teknisi dengan metrik waktu, keberhasilan tugas, dan skor kepuasan pengguna.</p>
+                </div>
+            </div>
+            <p style="margin-top:1rem;"><em>Dari fase Ideate inilah lahir konsep <strong>GPN Finder</strong>, yang kemudian diwujudkan dan diuji.</em></p>
+        </section>
+
+        <!-- GPN Finder: Before/After comparison -->
+        <section class="section" id="sectionSolution">
+            <h2>GPN Finder: Dari Sketsa Menjadi Senjata Rahasia</h2>
+            <p>GPN Finder bukan aplikasi baru, melainkan ekstensi kecil yang terintegrasi mulus ke dalam Thalos. Berikut perbandingannya:</p>
+            <table class="comparison-table" id="comparisonTable">
+                <thead>
+                    <tr>
+                        <th>Aspek</th>
+                        <th>Sebelum (Thalos Lama)</th>
+                        <th>Sesudah (dengan GPN Finder)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Stok</strong></td>
+                        <td><span class="cross"></span> Tidak terlihat, harus buka menu lain</td>
+                        <td><span class="check"></span> Badge warna hijau/merah langsung di samping <em>part number</em></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Lokasi</strong></td>
+                        <td><span class="cross"></span> Teks “Rak C3-Bin5” yang tidak intuitif</td>
+                        <td><span class="check"></span> Peta visual rak dengan kode P201C01–P201C08, lokasi disorot biru</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Aksi</strong></td>
+                        <td><span class="cross"></span> 4 klik di menu terpisah untuk mencatat</td>
+                        <td><span class="check"></span> Tombol “Ambil Part” satu klik, otomatis kurangi stok</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Darurat</strong></td>
+                        <td><span class="cross"></span> Harus menavigasi banyak menu</td>
+                        <td><span class="check"></span> <strong>Emergency Mode</strong> — satu tombol merah fokuskan pencarian</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="quote" id="quoteDidit">
+                “Peta pharmacy dengan kode P201C01-P201C08 sangat membantu, saya langsung ke rak yang tepat. Thalos jadi jauh lebih berguna.”
+                <span class="quote-author">— Didit (Teknisi), setelah mencoba prototipe</span>
+            </div>
+        </section>
+
+        <!-- Detik Penentuan & Hasil -->
+        <section class="section" id="sectionResults">
+            <h2>Detik-Detik Penentuan: Hasil yang Mengejutkan</h2>
+            <p>Uji coba dilakukan dengan tugas yang sama, membandingkan Thalos lama vs Thalos + GPN Finder v2.0.</p>
+            <div class="stats-grid" id="statsGrid">
+                <div class="stat-card" data-target="12" data-suffix=" detik" data-prefix="">
+                    <div class="number">0</div>
+                    <div class="label">⏱️ Waktu Cek Stok & Lokasi (baru)</div>
+                </div>
+                <div class="stat-card" data-target="83.6" data-suffix="%" data-prefix="-">
+                    <div class="number">0</div>
+                    <div class="label">📉 Penurunan Waktu</div>
+                </div>
+                <div class="stat-card" data-target="96" data-suffix="%" data-prefix="">
+                    <div class="number">0</div>
+                    <div class="label">✅ Tingkat Keberhasilan Tugas</div>
+                </div>
+                <div class="stat-card" data-target="92" data-suffix="" data-prefix="">
+                    <div class="number">0</div>
+                    <div class="label">⭐ Skor Kepuasan (SUS) – <em>Best Imaginable</em></div>
+                </div>
+            </div>
+            <p style="text-align:center; color: var(--text-light);">Thalos lama: 73 detik, 72% keberhasilan, SUS 51 (<em>Poor</em>) → <strong>GPN Finder: 12 detik, 96% keberhasilan, SUS 92</strong></p>
+            <div class="quote" id="quoteDimas">
+                “Sekarang saya tahu stok ada atau tidak sebelum ke pharmacy, langsung dari work order Thalos. Contoh tadi part 1152230-03 langsung muncul stoknya 1 dan lokasinya di P201C01.”
+                <span class="quote-author">— Dimas (Teknisi)</span>
+            </div>
+        </section>
+
+        <!-- Pelajaran -->
+        <section class="section" id="sectionLesson">
+            <h2>Pelajaran Berharga di Balik Layar</h2>
+            <p>Solusi ini tidak memerlukan biaya besar atau perubahan sistem rumit. GPN Finder adalah ekstensi browser yang dapat langsung dipasang semua teknisi tanpa menunggu rilis besar. Sebuah bukti bahwa <strong>solusi paling elegan seringkali lahir dari mendengarkan, mengamati, dan berempati</strong>.</p>
+            <p>Dengan satu fitur kecil, <em>downtime</em> server berkurang, frustrasi lenyap, dan para pahlawan di lantai data center kembali tersenyum.</p>
+            <a href="#" class="btn" style="margin-top:1rem;">🔗 Lihat Prototipe Figma Publik</a>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>Cerita diadaptasi dari laporan tugas akhir <strong>“Penambahan Fitur GPN (Google Part Number) Finder pada Sistem Aplikasi Internal Service Management”</strong> oleh Dimas Kurniawan.</p>
+        <p style="margin-top:1rem;">© 2025 — Dibuat dengan pendekatan Human-Centered Design</p>
+    </footer>
+
+    <script>
+        (function() {
+            // Progress bar on scroll
+            window.addEventListener('scroll', () => {
+                const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+                const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                const scrolled = (scrollTop / scrollHeight) * 100;
+                document.getElementById('progress-bar').style.width = scrolled + '%';
+            });
+
+            // Intersection Observer for sections, quotes, table, stats, timeline items
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        if (entry.target.classList.contains('section')) {
+                            entry.target.classList.add('visible');
+                        }
+                        if (entry.target.classList.contains('quote')) {
+                            entry.target.classList.add('visible-quote');
+                        }
+                        if (entry.target.classList.contains('comparison-table')) {
+                            entry.target.classList.add('visible-table');
+                        }
+                        if (entry.target.classList.contains('timeline-item')) {
+                            entry.target.classList.add('visible-timeline');
+                            // Also highlight the corresponding phase line? We can animate the timeline::before
+                        }
+                        if (entry.target.classList.contains('stat-card')) {
+                            entry.target.classList.add('visible-stat');
+                            // Start counting for this card
+                            const numberEl = entry.target.querySelector('.number');
+                            if (numberEl && !entry.target.dataset.counted) {
+                                entry.target.dataset.counted = 'true';
+                                animateValue(numberEl, 0, parseFloat(entry.target.dataset.target), 1500, entry.target.dataset.prefix || '', entry.target.dataset.suffix || '');
+                            }
+                        }
+                        // For the stats grid container, we can also trigger children animation, but each card has own observer.
+                        // We'll observe each stat-card directly.
+                    }
+                });
+            }, { threshold: 0.2 });
+
+            // Observe sections
+            document.querySelectorAll('.section').forEach(section => observer.observe(section));
+            // Observe quotes
+            document.querySelectorAll('.quote').forEach(quote => observer.observe(quote));
+            // Observe comparison table
+            document.querySelector('#comparisonTable').forEach(el => observer.observe(el));
+            // Observe timeline items
+            document.querySelectorAll('.timeline-item').forEach(item => observer.observe(item));
+            // Observe stat cards
+            document.querySelectorAll('.stat-card').forEach(card => observer.observe(card));
+            // Also observe opening quote if not already
+            observer.observe(document.getElementById('openingQuote'));
+
+            // Animate number function
+            function animateValue(element, start, end, duration, prefix, suffix) {
+                const range = end - start;
+                const increment = range / (duration / 16); // approx 60fps
+                let current = start;
+                const step = () => {
+                    current += increment;
+                    if ((increment > 0 && current >= end) || (increment < 0 && current <= end)) {
+                        element.textContent = prefix + formatNumber(end) + suffix;
+                        return;
+                    }
+                    element.textContent = prefix + formatNumber(current) + suffix;
+                    requestAnimationFrame(step);
+                };
+                step();
+            }
+
+            function formatNumber(num) {
+                // If it's a float like 83.6, keep one decimal, else integer
+                if (num % 1 !== 0) {
+                    return num.toFixed(1);
+                }
+                return Math.floor(num);
+            }
+
+            // Additional: highlight active timeline phase based on scroll? Could be done but simple intersection is fine.
+        })();
+    </script>
+</body>
+</html>
